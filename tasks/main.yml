@@ -1,0 +1,11 @@
+---
+- name: install autossh in Fedora
+  dnf:
+    name: autossh
+    state: present
+  when: ansible_distribution == "Fedora"
+- name: install autossh in CentOS
+  yum:
+    name: autossh
+    state: present
+  when: ansible_distribution == "CentOS"
