@@ -1,2 +1,2 @@
 ---
-- include: "install-{{ ansible_distribution | lower }}.yml"
+- include: install-{{ ansible_distribution | lower }}.yml
