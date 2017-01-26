@@ -1,0 +1,5 @@
+---
+- name: install autossh
+  dnf:
+    name: autossh
+    state: present

@@ -1,2 +1,3 @@
 # ansible-role-autossh
-Ansible role for setting up autossh tunnel in Fedora and CentOS 7.
+
+Ansible role for setting up autossh tunnel in Fedora and CentOS.
