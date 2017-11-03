@@ -3,3 +3,4 @@
   package:
     name: autossh
     state: present
+  become: yes
