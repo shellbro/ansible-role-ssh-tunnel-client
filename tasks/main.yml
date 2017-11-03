@@ -1,2 +1,5 @@
 ---
-- include_tasks: install-{{ ansible_distribution | lower }}.yml
+- name: install autossh
+  package:
+    name: autossh
+    state: present
