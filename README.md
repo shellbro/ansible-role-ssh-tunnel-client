@@ -25,7 +25,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - shellbro.ssh-tunnel-client
+        - shellbro.ssh-tunnel-client
 
 License
 -------
