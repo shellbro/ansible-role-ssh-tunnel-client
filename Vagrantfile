@@ -2,7 +2,7 @@ Vagrant.configure("2") do |config|
   config.vbguest.auto_update = false
   
   config.vm.define "fedora" do |fedora|
-    fedora.vm.box = "fedora/26-cloud-base"
+    fedora.vm.box = "fedora/27-cloud-base"
     fedora.vm.provision "shell" do |s|
       s.inline = "dnf -y install python python2-dnf libselinux-python"
     end
