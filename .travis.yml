@@ -1,0 +1,16 @@
+sudo: required
+
+env:
+  - distribution: fedora
+    version: 27
+  - distribution: centos
+    version: 7
+
+services:
+  - docker
+
+before_install:
+  - 'sudo docker pull ${distribution}:${version}'
+
+script:
+  - container_id=$(mktemp)
