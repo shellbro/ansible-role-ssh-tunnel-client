@@ -18,10 +18,12 @@ Ansible version >= 2.4
 Role Variables
 --------------
 
-* server - server hostname or IP address (required)
+* server - server name or IP address (required)
 * server_port - server's SSH port (by default 22)
-* user - run tunnel as this user. This option implies that specified user
-exists on the client side, has SSH key pair generated and public SSH key is
+* server_user - user that exists on the server side used for SSH connection
+(required)
+* client_user - run tunnel as this user. This option implies that specified user
+exists on the client side, has SSH key pair generated and it's SSH public key is
 installed on the server side using `shellbro.ssh_tunnel_server` role. (required)
 * server_alive_interval - SSH connection setting (by default 15 seconds)
 * server_alive_count_max - SSH connection setting (by default 3)
@@ -56,7 +58,9 @@ Example Playbook
       hosts: server-side
       roles:
         - role: shellbro.ssh-tunnel-server
-          open_port: 12222
+          user: ec2-user
+          ssh_public_key_file: id_rsa.pub
+          firewall_port: 12222
 
     - name: >-
         Set up persistent SSH tunnel for accessing SSH server
@@ -65,6 +69,7 @@ Example Playbook
       roles:
         - role: shellbro.ssh-tunnel-client
           server: server-side
+          server_user: ec2-user
           user: devops
           remote_port_forwarding: true
           bind_address: 0.0.0.0
