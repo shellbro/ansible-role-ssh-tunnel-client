@@ -1,6 +1,7 @@
 ---
 galaxy_info:
   author: Jakub Gorczyca
+  role_name: ssh_tunnel_client
   description: >-
     Ansible role for setting up SSH tunnel between two CentOS 7 machines (client
     side). Uses autossh and systemd for persistance.
