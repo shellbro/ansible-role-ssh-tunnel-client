@@ -1,5 +1,7 @@
 [Unit]
 Description=autossh service
+Wants=network-online.target
+After=network.target network-online.target
 
 [Service]
 ExecStart=/usr/bin/autossh -M 0 \
@@ -19,3 +21,6 @@ ExecStart=/usr/bin/autossh -M 0 \
 User={{ user }}
 Restart=always
 RestartSec={{ restart_sec }}
+
+[Install]
+WantedBy=multi-user.target
