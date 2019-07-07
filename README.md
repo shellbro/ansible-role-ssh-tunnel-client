@@ -20,9 +20,9 @@ Role Variables
 
 * server - server name or IP address (required)
 * server_port - server's SSH port (by default 22)
-* server_user - user that exists on the server side used for SSH connection
-(required)
-* client_user - run tunnel as this user. This option implies that specified user
+* server_user - user that is configured on the server side using
+`shellbro.ssh_tunnel_server` role (required)
+* user - run tunnel as this user. This option implies that specified user
 exists on the client side, has SSH key pair generated and it's SSH public key is
 installed on the server side using `shellbro.ssh_tunnel_server` role. (required)
 * server_alive_interval - SSH connection setting (by default 15 seconds)
@@ -54,7 +54,7 @@ Dependencies
 Example Playbook
 ----------------
 
-    - name: Configure server side
+    - name: Configure server side on AWS
       hosts: server-side
       roles:
         - role: shellbro.ssh-tunnel-server

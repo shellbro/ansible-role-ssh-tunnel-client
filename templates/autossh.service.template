@@ -16,6 +16,6 @@ ExecStart=/usr/bin/autossh -M 0 \
 {% endif %}
 -N {{ server }}
 
-User={{ client_user }}
+User={{ user }}
 Restart=always
 RestartSec={{ restart_sec }}
