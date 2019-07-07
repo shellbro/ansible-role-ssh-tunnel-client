@@ -7,8 +7,7 @@ Ansible role for setting up SSH tunnel between two CentOS 7 machines (client
 side). Uses autossh and systemd for persistance.
 
 Before applying this role to a client machine use `shellbro.ssh_tunnel_server`
-role on a server machine so it is configured to allow port forwarding and has
-correct client SSH public key installed.
+role on a server machine so it has correct SSH and firewall configuration.
 
 Requirements
 ------------
