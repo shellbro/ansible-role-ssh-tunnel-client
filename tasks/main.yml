@@ -2,4 +2,21 @@
 - name: Install autossh
   yum:
     name: autossh
-  become: yes
+  become: true
+
+- name: Set up autossh systemd service
+  template:
+    dest: /etc/systemd/system/autossh.service
+    src: autossh.service.template
+  become: true
+  notify:
+    - Reload systemd
+    - Restart autossh service
+
+- name: Start and enable autossh service
+  tags: notest
+  service:
+    enabled: true
+    name: autossh
+    state: started
+  become: true

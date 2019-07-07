@@ -1,5 +1,6 @@
 ---
 server_port: 22
+server_user: "{{ user }}"
 server_alive_interval: 15
 server_alive_count_max: 3
 restart_sec: 15

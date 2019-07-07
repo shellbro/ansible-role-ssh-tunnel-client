@@ -21,7 +21,7 @@ Role Variables
 * server - server name or IP address (required)
 * server_port - server's SSH port (by default 22)
 * server_user - user that is configured on the server side using
-`shellbro.ssh_tunnel_server` role (required)
+`shellbro.ssh_tunnel_server` role (by default the same as `user`)
 * user - run tunnel as this user. This option implies that specified user
 exists on the client side, has SSH key pair generated and it's SSH public key is
 installed on the server side using `shellbro.ssh_tunnel_server` role. (required)

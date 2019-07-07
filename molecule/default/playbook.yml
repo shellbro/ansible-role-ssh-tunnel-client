@@ -1,5 +1,15 @@
 ---
 - name: Converge
   hosts: all
+  vars:
+    notest: true
   roles:
     - role: ansible-role-ssh-tunnel-client
+      server: server-side
+      server_user: ec2-user
+      user: devops
+      remote_port_forwarding: true
+      bind_address: 0.0.0.0
+      forward_port: 12222
+      target_host: 127.0.0.1
+      target_port: 22
