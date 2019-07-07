@@ -65,7 +65,7 @@ Example Playbook
 
     - name: >-
         Set up persistent SSH tunnel for accessing SSH server
-        (running on the client side) behind corporate firewall
+        (running on the client side) behind firewall
       hosts: client_side
       roles:
         - role: shellbro.ssh_tunnel_client
