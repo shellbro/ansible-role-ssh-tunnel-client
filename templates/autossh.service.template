@@ -5,15 +5,15 @@ Description=autossh service
 ExecStart=/usr/bin/autossh -M 0 \
 -o 'ServerAliveInterval {{ server_alive_interval }}' \
 -o 'ServerAliveCountMax {{ server_alive_count_max }}' \
--p {{ port }}
--o 'StrictHostKeyChecking=no'
+-p {{ server_port }} \
+-o 'StrictHostKeyChecking=no' \
 {% if remote_port_forwarding %}
 -R {{ bind_address }}:{{ forward_port }}:{{ target_host }}:{{ target_port }} \
 {% endif %}
 {% if local_port_forwarding %}
 -L {{ bind_address }}: {{ forward_port }}:{{ target_host }}:{{ target_port }} \
 {% endif %}
--N {{ host }}
+-N {{ server }}
 
 User={{ user }}
 Restart=always

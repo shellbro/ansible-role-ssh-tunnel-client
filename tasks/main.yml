@@ -1,6 +1,5 @@
 ---
-- name: install autossh
-  package:
+- name: Install autossh
+  yum:
     name: autossh
-    state: present
   become: yes

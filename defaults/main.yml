@@ -1,2 +1,7 @@
 ---
-# defaults file for ansible-role-ssh-tunnel-client
+server_port: 22
+server_alive_interval: 15
+server_alive_count_max: 3
+restart_sec: 15
+remote_port_forwarding: false
+local_port_forwarding: false
