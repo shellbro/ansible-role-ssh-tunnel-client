@@ -60,11 +60,11 @@ Example Playbook
 
     - name: >-
         Set up persistent SSH tunnel for accessing SSH server
-        (running on the client side) behind firewall
+        (running on the client side) behind corporate firewall
       hosts: client-side
       roles:
         - role: shellbro.ssh-tunnel-client
-          host: server-side
+          server: server-side
           user: devops
           remote_port_forwarding: true
           bind_address: 0.0.0.0
