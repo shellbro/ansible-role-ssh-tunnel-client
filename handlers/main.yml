@@ -1,6 +1,7 @@
 ---
 - name: Restart autossh service
-  service:
+  systemd:
+    daemon_reload: true
     name: autossh
     state: restarted
   become: true

@@ -10,18 +10,11 @@
     src: autossh.service.template
   become: true
   notify: Restart autossh service
-  register: autossh_systemd_service_results
-
-- name: Reload systemd
-  tags: notest
-  systemd:
-    daemon_reload: true
-  become: true
-  when: autossh_systemd_service_results is changed
 
 - name: Start and enable autossh service
   tags: notest
-  service:
+  systemd:
+    daemon_reload: true
     enabled: true
     name: autossh
     state: started
