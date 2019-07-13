@@ -17,7 +17,7 @@
   systemd:
     daemon_reload: true
   become: true
-  when: autossh_systemd_service_results | changed
+  when: autossh_systemd_service_results is changed
 
 - name: Start and enable autossh service
   tags: notest
